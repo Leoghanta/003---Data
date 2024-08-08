@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Data</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/sunburst.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <header>
+        <h1>Workshop 2 - Data</h1>
+    </header>
+
+    <div class="container">
+        <h1>Data</h1>
+        <p>Computer programs require data in order to function. In this workshop, we'll look at how 
+            to store data in our programs, and what different types of data there is.
+        </p> 
+
+        <div class="browser-section">
+            <h2>Variables</h2>
+            <p>A variable is a piece of memory that we allocate in which to store information. The memory 
+                system is fairly complex so we give our piece of memory a friendly name so we can access it
+                easily. Have a look at this program.
+            </p>
+            <pre><code class="language-javascript">
+let myName = "Jimi";
+let age = 30;
+            </code></pre>
+            <p>
+                The keyword <span class="highlight">let</span> tells the browser that I'm goin to create a 
+                variable and to free up some memory for me to use.
+            </p>
+            <p> I then give my piece of memory a friendly name, <span class="highlight">myName</span> and <span class="highlight">age</span> are the variable names.</p>
+            <p> Then we use an <span class="highlight">=</span> sign. This is an assignment operator and I am about to assign a value to my variable.</p>
+            <p> Lastly, I add my value and then end the operation with a semi-colon.</p>
+            <p> The variables are stored in memory for use later on in the program and we can retrieve the 
+                contents of those variables by using their names. For example, we could send them to the 
+                console log.
+            </p>
+            <pre><code class="language-javascript">
+let myName = "Jimi";
+let age = 30;
+
+console.log(myName);
+console.log(age);
+
+console.log (myName, age); 
+            </code></pre>
+            <p>The console log will print the contents of the variable, not the variable name itself. You can 
+                also send multiple variables to the console log at once by separating them with commas.
+            </p>
+
+        </div> 
+
+        <div class="browser-section">
+            <h2>Changing Variables</h2>
+            <p>Variables are so named as they can change their values. Let's have a look at this program.
+            </p>
+            <pre><code class="language-javascript">
+let myName = "Jimi";
+let age = 30;
+
+console.log(myName);
+console.log(age);
+
+age = 40;
+console.log(age);
+            </code></pre>
+            <p>In this program, the value of age has been updated. We did not need to use the <span class="highlight">let</span> 
+            keyword again as the variable name had already been declared. variables can be updated.</p>
+        </div>  
+
+        <div class="browser-section">
+            <h2>Constant</h2>
+            <p>For variables that should not change their values, we use a special variable called <span class="highlight">const</span> 
+                and this will make the variable immutable. it can't be overwritten.
+            </p>
+            <pre><code class="language-javascript">
+let myName = "Jimi";
+const age = 30;
+
+console.log(myName);
+console.log(age);
+
+age = 40;
+            </code></pre>
+            <p>Try changing the age variable from let to const. What happens when you try to update a constant?</p>
+            <p>A TypeError occurs when you attempt to update a variable with information it can not hold. This 
+                error tells you that you cannot assign to a constant variable. 
+            </p>
+            <p>Using const allows JavaScript to understand that this piece of memory will not change. In small 
+                programs, there is not much difference, but in large systems, it can improve overall efficiency. 
+                It is good practice!
+            </p>
+        </div>  
+
+        <div class="browser-section">
+            <h2>Var</h2>
+            <p>You may see in some text books that <span class="highlight">var</span> is used to declare variables. While 
+                this is acceptable to use, it is from an old version of JavaScript. Modern JavaScript should only use 
+                <span class="highlight">let</span> or <span class="highlight">const</span>.
+            </p>
+        </div>  
+
+        <div class="browser-section">
+            <h2>Variable Names and Naming Conventions</h2>
+            <p>For naming of variables, we follow the <a href="https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide/JavaScript#variable_names" target="_blank">official documentation</a>.
+               This is to ensure good practice and standardisation.</p>
+            <p>Variable names can only contain numbers, letters, underscores and dollar signs. However, it must never start with 
+                a number.
+            </p>
+            <p>Variable names should use camelCase - start with a lowercase letter and then use uppercase for each following word. 
+                Variable names can not contain spaces.</p>
+            <pre><code class="language-javascript">
+/* Examples of good variable names */
+let car = "volkswagon";
+let playerScore = 400;
+let speed = distance / time;
+let cashInDollars = 45
+            </code></pre>
+            <p>Lastly, it is good practice to name your variables so they are descriptive and can be identified easily in 
+                the context of the code. Your code forms part of your technical documentation and it should be understandable 
+                by other coders.
+            </p>
+        </div> 
+
+        <div class="browser-section">
+            <h2>Data Types</h2>
+            <p>In the previous examples, there were two variables, <span class="highlight">myName</span> and <span class="highlight">age</span>
+               and myName held information within quote marks, but age didn't. This is because text and numbers are different data types. Let's take
+               a look at some of the primitive data types that JavaScript uses.
+            </p>
+            <h3>Number</h3>
+            <p>In JavaScript, the number datatype represents numeric values. This includes Integers(whole numbers) and Reals(Any number with a decimal point).</p>
+            <pre><code class="language-javascript">
+let integerValue = -5;  // Integers are whole numbers.
+console.log(integerValue);
+
+let realValue = 3.14; // Real numbers are numbers with decimal points. 
+console.log(realValue);
+            </code></pre>        
+            <h3>Boolean</h3>
+            <p>A boolean value only holds one bit of data, and that is either a 1 or a 0. For programming we know this as true or false. Booleans are mainly used for conditional statements. It can also be used as switches.</p>
+            <pre><code class="language-javascript">
+let lightSwitch = true;  // the light is on.
+console.log(lightSwitch);
+
+lightSwitch = false;     // the light is now off
+console.log(lightSwitch);
+            </code></pre>      
+
+            <h3>String</h3>
+            <p>A string data type is a row of text within quote marks. Strings are stored in memory as a sequence of characters.
+            </p>
+            <pre><code class="language-javascript">
+let fruit = "apple";
+console.log(fruit);
+
+let country = "Denmark";
+console.log(country);
+
+let phrase = "The quick brown fox jumped over the lazy dog.";
+console.log(phrase);
+            </code></pre>   
+            <h3>Null</h3>
+            <p>The Null datatype represents 'no value' or 'nothing.' It is different to 0 as 0 is a value (an integer). Null is the absense of any positive, negative, and zero value. Null is empty memory.
+            </p>
+            <pre><code class="language-javascript">
+let noNumber = null;
+console.log(noNumber);
+            </code></pre>   
+            <h3>Undefined</h3>
+            <p>The undefined data structure is reserved for unknown memory, or memory that has not been used - it does not even contain empty memory. </p>
+            <pre><code class="language-javascript">
+let nothing; 
+console.log(nothing);
+            </code></pre> 
+            <p>In this example, the variable is reserved, but JavaScript has no idea if it is a number, a string, or a boolean - it is undefined.</p>
+            <h3>Others</h3>
+            <p>There are other data structures that we will look at later in the module. Symbol, Object, BigInt, Arrays are all complex data structures. Feel free to look up these data structures.
+            </p>
+        </div>
+
+
+    <div class="browser-section">
+        <h2>Arithmetic Operators</h2>
+        <p>We've had a brief look at arithmetic before but it is important to see what this means in terms of 
+            variables and memory. Let's take a look at the common arithmetic operators.
+        </p>
+        <pre><code class="language-javascript">
+let num1 = 46;
+let num2 = 32;
+
+let sum = num1 + num2; // addition
+let difference = num1 - num2; // subtraction
+let product = num1 * num2; // multiplication
+let quotient = num1 / num2; // division
+let modulus = num1 % num2; // remainder.
+let exponent = num1 ** num2; // to the power of.
+
+num1++; // increment by 1.
+num1--; // decrement by 1.  
+        </code></pre>         
+    </div> 
+
+        <div class="browser-section">
+            <h2>Exercises</h2>
+            <p></p>
+            <ul id="taskList">
+                <li><input type="checkbox" id="task1"><label for="task1"> Subtract your age by the year and print the result in the console log.</label></li>
+                <li><input type="checkbox" id="task2"><label for="task2"> Distance = speed * time. How long has a car travelled driving 70mph for 5 hours?</label></li>
+                <li><input type="checkbox" id="task3"><label for="task3"> time = distance / speed. Flight HR2453 flies EDI to TFS. 2725 miles for an average of 550mph. How long is the flight?  </label></li>
+                <li><input type="checkbox" id="task4"><label for="task4"> The restaurant bill with 3 friends comes to £124.33. Splitting the bill equally, how much does each person pay? </label></li>
+                <li><input type="checkbox" id="task5"><label for="task5"> With this restaurant bill, you decide to leave a 20% tip. How much does each person tip? </label></li>
+                <li><input type="checkbox" id="task6"><label for="task6"> After the restaurant, you went to see a movie. Which movie was it? How much was it? (use google for prices) </label></li>
+            </ul>
+        </div>
+
+
+        <div class="browser-section">
+            <h2>Q&A and Troubleshooting</h2>
+            <p></p>
+            <ul id="taskList">
+                <li>✅ Be aware the difference between NaN, Null, and Undefined. These will help your debugging process.
+                </li>
+                <li>✅ In Arithmetic, use brackets to sort out the order of operations. 6+2*5 is not the same as (6+2)*5 
+                    </li>
+                <li>✅ If you don’t get the correct answer, check your data types. 
+                </li>
+            </ul>
+            <p class="highlight">Remember the <a href="https://dundeeandangus-my.sharepoint.com/:wb:/g/personal/t_wilson_dundeeandangus_ac_uk/ERq49vn8tKlEoNjZZgmK02cBp_yUB0hHAveXEr5zWCHZQA?e=taUgX8" target="_blank">Whiteboard</a>
+                is available for you to ask questions anonymously.</p>
+        </div>
+
+
+        <div class="browser-section">
+            <h2>Further Learning</h2>
+            <ul id="taskList">
+                <li>📖 <a href="https://www.w3schools.com/js/js_arithmetic.asp  " target="_blank">W3Schools Arithmetic</li>
+                <li>👀 <a href="https://www.youtube.com/watch?v=_MC0Gw07w8M " target="_blank">YouTube: Net Ninja</a></li>
+                <li>💻 <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Math   " target="_blank">Official Documentation - Math</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; J. Wilson. Dundee and Angus College.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
